@@ -28,4 +28,3 @@ def feature1():
         dictionary["serie"] = input(f"Ingrese el nombre de la serie {i}: ")
         dictionary["number_seasons"] = int(input(f"Ingrese el numero de temporadas de la serie {i}: "))
         dictionary["original_lenguage"] = input(f"Ingrese el idioma original de la serie {i}: ")
-        dicitionary[] 
