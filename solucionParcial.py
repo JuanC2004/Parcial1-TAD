@@ -21,10 +21,23 @@ dictionary={
                 }]      
     }]
 }    
+def actor_search():
+    actor_name = input("Ingrese el nombre del actor al que desea buscar: ")
+    for i in dictionary:
+        for j in i["features_seasons"]:
+            for k in j["cast"]:
+                if k == actor_name:
+                    print(f"En la serie {i} participa el actor buscado")
 
-def feature1():
-    dictionary_counter=3
-    for i in range (1, dictionary_counter+1) :
-        dictionary["serie"] = input(f"Ingrese el nombre de la serie {i}: ")
-        dictionary["number_seasons"] = int(input(f"Ingrese el numero de temporadas de la serie {i}: "))
-        dictionary["original_lenguage"] = input(f"Ingrese el idioma original de la serie {i}: ")
+def language_search():
+    language = input("Ingrese el idioma a buscar ")
+    for serie_index in dictionary:
+        if serie_index["original_lenguage"] == language:
+            print(f"La serie en la que se tiene este idioma es: {serie_index["serie"]}")
+
+def premier_date_search():
+    premier_date = input("Premier Date: ")
+    for serie_index in dictionary:
+        for season_index in serie_index["features_seasons"]:
+            if season_index["premier_date"] == premier_date:
+                del serie_index
